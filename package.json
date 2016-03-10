@@ -2,13 +2,13 @@
   "name": "stigokdotcom-server",
   "version": "0.0.0",
   "description": "",
+  "private": true,
   "main": "server.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node bin/www 3000"
   },
   "repository": {
     "type": "git",

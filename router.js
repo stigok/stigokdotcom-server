@@ -2,18 +2,16 @@
 
 const express = require('express');
 const router = new express.Router();
-const path = require('path');
-const angularPath = path.join(__dirname, 'app');
 const tumblr = require('tumblr.js');
-const settings = require('settings.json');
-const client = tumblr.createClient(settings.tumblr);
+const settings = require('./settings.json');
+const tumblrClient = tumblr.createClient(settings.tumblr);
 const cache = require('memory-cache');
 const cacheTimeout = 15 * 60 * 1000;
 const helpers = require('./helpers');
 const responseObject = helpers.jsonResponseObject;
 
 // Angular app
-router.use('/', express.static(angularPath));
+router.use('/', express.static(settings.angularAppPath));
 
 // API calls
 router.use('/api/posts', (req, res) => {
@@ -25,7 +23,7 @@ router.use('/api/posts', (req, res) => {
     cache.put(key, 'pending', 5000);
 
     // Get fresh data
-    client.posts('stigok.tumblr.com', {reblog_info: true, filter: 'raw'}, (err, resp) => { // eslint-disable-line camelcase
+    tumblrClient.posts('stigok.tumblr.com', {reblog_info: true, filter: 'raw'}, (err, resp) => { // eslint-disable-line camelcase
       if (err) {
         return console.error('api call error', err);
       }
