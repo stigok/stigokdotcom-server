@@ -1,0 +1,29 @@
+{
+  "name": "stigokdotcom-server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stigok/stigokdotcom-server.git"
+  },
+  "author": "stigok",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/stigok/stigokdotcom-server/issues"
+  },
+  "homepage": "https://github.com/stigok/stigokdotcom-server#readme",
+  "devDependencies": {
+    "express": "^4.13.4",
+    "helmet": "^1.3.0",
+    "memory-cache": "^0.1.4",
+    "tumblr.js": "0.0.7"
+  }
+}
