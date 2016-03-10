@@ -1,4 +1,5 @@
 {
+  "angularAppPath": "/abs/path/to/static/angular/app",
   "tumblr": {
     "consumer_key": "<consumer key>",
     "consumer_secret": "<consumer secret>",
